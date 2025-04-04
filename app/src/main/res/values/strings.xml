@@ -1,3 +1,16 @@
 <resources>
     <string name="app_name">Remont Tracker</string>
+    <string name="button_room">Зайти в кімнату</string>
+    <string name="description">Цей застосунок допомагає ремонтним бригадам контакутвати з замовником,
+        вести облік виконаних робіт,
+        визначити ціну матеріалів та
+        друкування чеків за допомогою термпопринтера.</string>
+
+    <!-- activity_secondpage -->
+
+    <string name="title">Construction</string>
+    <string name="button_view">View</string>
+    <string name="button_materials">Materials\n950 units</string>
+    <string name="button_expenses">Expenses\n$12,500</string>
+    <string name="button_tasks">Tasks\n18</string>
 </resources>
