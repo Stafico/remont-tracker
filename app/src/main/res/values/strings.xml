@@ -1,6 +1,7 @@
 <resources>
-    <string name="app_name">Remont Tracker</string>
+    <string name="app_name">BuildTrack</string>
     <string name="button_room">Зайти в кімнату</string>
+    <string name="button_signIn">Зареєструватися</string>
     <string name="description">Цей застосунок допомагає ремонтним бригадам контакутвати з замовником,
         вести облік виконаних робіт,
         визначити ціну матеріалів та
@@ -9,8 +10,23 @@
     <!-- activity_secondpage -->
 
     <string name="title">Construction</string>
-    <string name="button_view">View</string>
-    <string name="button_materials">Materials\n950 units</string>
-    <string name="button_expenses">Expenses\n$12,500</string>
-    <string name="button_tasks">Tasks\n18</string>
+    <string name="button_materials">Матеріали і Витрати</string>
+    <string name="button_tasks">Завдання</string>
+    <string name="button_back">Назад</string>
+
+    <string name="create_back">Створити проєкт</string>
+    <string name="delete_back">Видалити проєкт</string>
+
+    <string name="button_project1">Проєкт 1</string>
+    <string name="button_project2">Проєкт 2</string>
+    <string name="button_project3">Проєкт 3</string>
+
+    <!-- activity_fragment_project -->
+
+    <string name="project_title">Project Title</string>
+    <string name="project_desc">Description here</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_tasks_activity.java">TasksActivity.java</string>
 </resources>
