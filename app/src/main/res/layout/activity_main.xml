@@ -11,21 +11,23 @@
         android:id="@+id/textView2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="96dp"
         android:text="@string/app_name"
         android:textColor="@color/black"
-        android:textSize="40sp"
+        android:textSize="60sp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <Button
         android:id="@+id/Move"
-        android:layout_width="300dp"
-        android:layout_height="60dp"
+        android:layout_width="303dp"
+        android:layout_height="67dp"
         android:backgroundTint="#FF5722"
         android:text="@string/button_room"
         android:textSize="20sp"
+        android:onClick="openSecond"
         app:layout_constraintBottom_toTopOf="@+id/guideline2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -36,13 +38,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintGuide_begin="555dp" />
+        app:layout_constraintGuide_begin="580dp" />
 
     <TextView
         android:id="@+id/textView3"
         android:layout_width="wrap_content"
         android:layout_height="290dp"
-        android:layout_marginTop="20dp"
+        android:layout_marginTop="18dp"
         android:gravity="center_horizontal"
         android:text="@string/description"
         android:textSize="20sp"
@@ -50,5 +52,18 @@
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
+
+    <Button
+        android:id="@+id/button2"
+        android:layout_width="303dp"
+        android:layout_height="67dp"
+        android:layout_marginTop="42dp"
+        android:backgroundTint="#FF5722"
+        android:text="@string/button_signIn"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.504"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/Move" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
