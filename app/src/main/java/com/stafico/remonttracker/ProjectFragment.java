@@ -1,9 +1,11 @@
 package com.stafico.remonttracker;
 
+import android.content.Intent;
 import android.os.Bundle;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
@@ -41,7 +43,14 @@ public class ProjectFragment extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
+
         View view = inflater.inflate(R.layout.fragment_project, container, false);
+
+        Button tasksButton = view.findViewById(R.id.button6);
+        tasksButton.setOnClickListener(v -> {
+            Intent intent = new Intent(requireContext(), TasksActivity.class);
+            startActivity(intent);
+        });
 
         TextView titleView = view.findViewById(R.id.projectTitle);
         TextView descView = view.findViewById(R.id.projectDescription);

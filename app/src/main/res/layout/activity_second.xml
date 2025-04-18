@@ -15,41 +15,42 @@
         android:orientation="vertical">
 
         <!-- 🔼 Навігаційні кнопки -->
-        <HorizontalScrollView
+
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:fillViewport="true"
+            android:orientation="horizontal"
+            android:gravity="center_vertical"
             android:padding="8dp">
 
-            <LinearLayout
+            <Button
+                android:id="@+id/backButton"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:orientation="horizontal"
-                android:theme="?android:attr/buttonBarStyle">
+                android:backgroundTint="#FF5722"
+                android:text="@string/button_back"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
 
+            <HorizontalScrollView
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:paddingStart="5dp"
+                android:paddingEnd="8dp"
+                android:fillViewport="true">
 
-                <Button
-                    style="@style/ProjectButton"
-                    android:id="@+id/project1"
+                <LinearLayout
+                    android:id="@+id/projectButtonContainer"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    android:text="@string/button_project1"/>
+                    android:orientation="horizontal">
 
-                <Button
-                    style="@style/ProjectButton"
-                    android:id="@+id/project2"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/button_project2"/>
 
-                <Button
-                    style="@style/ProjectButton"
-                    android:id="@+id/project3"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    android:text="@string/button_project3"/>
-            </LinearLayout>
-        </HorizontalScrollView>
+                </LinearLayout>
+            </HorizontalScrollView>
+        </LinearLayout>
+
 
         <!-- 🔽 Контейнер для вмісту проекту -->
         <androidx.fragment.app.FragmentContainerView
@@ -58,17 +59,40 @@
             android:layout_height="0dp"
             android:layout_weight="1" />
 
-        <Button
-            android:id="@+id/backButton"
-            android:layout_width="wrap_content"
-            android:layout_height="50dp"
-            android:layout_marginTop="66dp"
-            android:layout_marginEnd="20dp"
-            android:backgroundTint="#FF5722"
-            android:gravity="center"
-            android:text="@string/button_back"
-            android:textColor="@android:color/white" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:gravity="center">
+
+            <Button
+                android:id="@+id/createProjectButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/create_back"
+                android:backgroundTint="#4CAF50"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:layout_marginEnd="4dp"/>
+
+            <Button
+                android:id="@+id/deleteProjectButton"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="@string/delete_back"
+                android:backgroundTint="#F44336"
+                android:textColor="@android:color/white"
+                android:textSize="18sp"
+                android:layout_marginStart="0dp"/>
+        </LinearLayout>
+
+
+
     </LinearLayout>
+
 
 
 </androidx.constraintlayout.widget.ConstraintLayout>
