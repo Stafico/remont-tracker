@@ -42,7 +42,6 @@ public class ControlActivity extends AppCompatActivity {
         setContentView(binding.getRoot());
         onBtListResult();
         init();
-
         binding.bA.setOnClickListener(v -> {
             if (btConnection != null) {
                 btConnection.sendMessage("Crocodilio Bombardilio");

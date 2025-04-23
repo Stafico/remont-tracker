@@ -1,4 +1,4 @@
-package com.stafico.remonttracker;
+package com.stafico.remonttracker.presentation.photos;
 
 import android.view.LayoutInflater;
 import android.view.View;
@@ -7,6 +7,8 @@ import android.widget.ImageView;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.stafico.remonttracker.R;
 
 import java.util.List;
 

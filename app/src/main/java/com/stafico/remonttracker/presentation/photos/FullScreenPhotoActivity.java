@@ -1,9 +1,11 @@
-package com.stafico.remonttracker;
+package com.stafico.remonttracker.presentation.photos;
 
 import android.os.Bundle;
 import android.widget.ImageView;
 
 import androidx.appcompat.app.AppCompatActivity;
+
+import com.stafico.remonttracker.R;
 
 public class FullScreenPhotoActivity extends AppCompatActivity {
 

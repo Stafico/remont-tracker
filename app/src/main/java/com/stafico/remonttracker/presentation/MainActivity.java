@@ -1,4 +1,4 @@
-package com.stafico.remonttracker;
+package com.stafico.remonttracker.presentation;
 
 import android.annotation.SuppressLint;
 import android.content.Intent;
@@ -11,6 +11,8 @@ import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.graphics.Insets;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
+
+import com.stafico.remonttracker.R;
 
 public class MainActivity extends AppCompatActivity {
 
@@ -36,6 +38,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     public void openSecond(View view) {
-        startActivity(new Intent(this, second.class));
+        startActivity(new Intent(this, ProjectListActivity.class));
     }
 }

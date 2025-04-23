@@ -1,4 +1,4 @@
-package com.stafico.remonttracker;
+package com.stafico.remonttracker.presentation.tasks;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -11,8 +11,11 @@ import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.view.ViewCompat;
 import androidx.core.view.WindowInsetsCompat;
-import androidx.recyclerview.widget.RecyclerView;
 import androidx.viewpager2.widget.ViewPager2;
+
+import com.stafico.remonttracker.presentation.photos.FullScreenPhotoActivity;
+import com.stafico.remonttracker.presentation.photos.PhotoAdapter;
+import com.stafico.remonttracker.R;
 
 import java.util.Arrays;
 import java.util.List;

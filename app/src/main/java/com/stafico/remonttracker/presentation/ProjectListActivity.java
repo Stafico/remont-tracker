@@ -1,4 +1,4 @@
-package com.stafico.remonttracker;
+package com.stafico.remonttracker.presentation;
 
 import android.content.SharedPreferences;
 import android.content.res.ColorStateList;
@@ -16,11 +16,14 @@ import androidx.fragment.app.Fragment;
 
 import com.google.gson.Gson;
 import com.google.gson.reflect.TypeToken;
+import com.stafico.remonttracker.R;
+import com.stafico.remonttracker.domain.model.ProjectModel;
+import com.stafico.remonttracker.presentation.projects.ProjectFragment;
 
 import java.lang.reflect.Type;
 import java.util.ArrayList;
 
-public class second extends AppCompatActivity {
+public class ProjectListActivity extends AppCompatActivity {
 
     private static final String PREFS_NAME = "projects_prefs";
     private static final String KEY_PROJECTS = "saved_projects";

@@ -20,9 +20,6 @@ import com.stafico.remonttracker.databinding.ActivityBluetoothBinding;
 import java.util.ArrayList;
 import java.util.Set;
 
-// https://developer.android.com/develop/connectivity/bluetooth/setup
-// https://www.youtube.com/watch?v=y8R2C86BIUc&list=PLgCYzUzKIBE8KHMzpp6JITZ2JxTgWqDH2
-// https://www.youtube.com/watch?v=A2y3fSXjVMo
 public class BtListActivity extends AppCompatActivity implements RcAdapter.Listener {
 
     private static final String TAG = "BtListActivity";

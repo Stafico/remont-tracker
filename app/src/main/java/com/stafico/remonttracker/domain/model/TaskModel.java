@@ -1,4 +1,4 @@
-package com.stafico.remonttracker;
+package com.stafico.remonttracker.domain.model;
 
 public class TaskModel {
     private String title;
