@@ -38,10 +38,6 @@
         <activity
             android:name=".bluetooth.BtListActivity"
             android:exported="false" />
-
-        <activity
-            android:name=".presentation.ProjectListActivity"
-            android:exported="false" />
     </application>
 
 </manifest>
