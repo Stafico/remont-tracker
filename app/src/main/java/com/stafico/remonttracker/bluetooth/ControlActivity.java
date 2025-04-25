@@ -6,9 +6,11 @@ import android.bluetooth.BluetoothManager;
 import android.content.Intent;
 import android.content.pm.PackageManager;
 import android.os.Bundle;
+import android.util.Log;
 
 import androidx.activity.result.ActivityResultLauncher;
 import androidx.activity.result.contract.ActivityResultContracts;
+import androidx.annotation.RequiresPermission;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.core.app.ActivityCompat;
 import androidx.core.content.ContextCompat;
@@ -42,13 +44,16 @@ public class ControlActivity extends AppCompatActivity {
         binding = ActivityControlBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
-        if(ContextCompat.checkSelfPermission(this, Manifest.permission.ACCESS_COARSE_LOCATION) != PackageManager.PERMISSION_GRANTED)
-            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.ACCESS_COARSE_LOCATION}, 1);
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.BLUETOOTH_CONNECT) != PackageManager.PERMISSION_GRANTED)
+            ActivityCompat.requestPermissions(this, new String[]{Manifest.permission.BLUETOOTH_CONNECT}, 1);
 
-        ArrayList<TaskModel> taskList = new ArrayList<>();
-        taskList.add(new TaskModel("Task 1", false));
-        taskList.add(new TaskModel("Task 2", false));
-        taskList.add(new TaskModel("Task 3", false));
+        ArrayList<TaskModel> taskList = getIntent().getParcelableArrayListExtra("taskList");
+
+        if (taskList == null) {
+            Log.d(TAG, "Ошибка передачи списка через Intent");
+            finish();
+            return;
+        }
 
         onBtListResult();
         init(); //bt connection
@@ -76,6 +81,7 @@ public class ControlActivity extends AppCompatActivity {
         });
     }
 
+    @RequiresPermission(Manifest.permission.BLUETOOTH_CONNECT)
     private void onBtListResult() {
         actListLauncher = registerForActivityResult(
             new ActivityResultContracts.StartActivityForResult(),
