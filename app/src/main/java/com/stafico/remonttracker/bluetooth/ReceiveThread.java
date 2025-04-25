@@ -1,6 +1,5 @@
 package com.stafico.remonttracker.bluetooth;
 
-import android.bluetooth.BluetoothGattCharacteristic;
 import android.bluetooth.BluetoothSocket;
 import android.util.Log;
 

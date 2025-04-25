@@ -33,4 +33,8 @@ public class BtConnection {
     public void sendMessage(String message) {
         cThread.rThread.sendMessage(message.getBytes());
     }
+
+    public void sendMessage(byte[] message) {
+        cThread.rThread.sendMessage(message);
+    }
 }
