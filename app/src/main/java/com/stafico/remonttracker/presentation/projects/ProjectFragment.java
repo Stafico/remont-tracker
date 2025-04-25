@@ -10,7 +10,6 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.stafico.remonttracker.R;
-import com.stafico.remonttracker.presentation.tasks.TasksActivity;
 
 public class ProjectFragment extends Fragment {
 
@@ -51,7 +50,7 @@ public class ProjectFragment extends Fragment {
 
         Button tasksButton = view.findViewById(R.id.button6);
         tasksButton.setOnClickListener(v -> {
-            Intent intent = new Intent(requireContext(), TasksActivity.class);
+            Intent intent = new Intent(requireContext(), ProjectActivity.class);
             startActivity(intent);
         });
 

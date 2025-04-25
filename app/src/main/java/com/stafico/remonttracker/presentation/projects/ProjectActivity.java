@@ -1,4 +1,4 @@
-package com.stafico.remonttracker.presentation.tasks;
+package com.stafico.remonttracker.presentation.projects;
 
 import android.content.Intent;
 import android.os.Bundle;
@@ -13,11 +13,14 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.stafico.remonttracker.R;
+import com.stafico.remonttracker.bluetooth.ControlActivity;
 import com.stafico.remonttracker.domain.model.TaskModel;
+import com.stafico.remonttracker.presentation.tasks.TaskAdapter;
+import com.stafico.remonttracker.presentation.tasks.TasksDetailsActivity;
 
 import java.util.ArrayList;
 
-public class TasksActivity extends AppCompatActivity {
+public class ProjectActivity extends AppCompatActivity {
 
     private ArrayList<TaskModel> taskList;
     private TaskAdapter taskAdapter;
@@ -28,7 +31,7 @@ public class TasksActivity extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_tasks);
+        setContentView(R.layout.activity_project);
         EdgeToEdge.enable(this);
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -41,6 +44,7 @@ public class TasksActivity extends AppCompatActivity {
         taskList = new ArrayList<>();
         tasksRecyclerView = findViewById(R.id.tasksRecyclerView);
         addTaskButton = findViewById(R.id.button_add_task);
+        Button receiptButton = findViewById(R.id.button_receipt);
         backButton = findViewById(R.id.button_back);
 
         // Налаштування RecyclerView
@@ -53,6 +57,14 @@ public class TasksActivity extends AppCompatActivity {
             int number = taskList.size() + 1;
             taskList.add(new TaskModel("Завдання " + number, false));
             taskAdapter.notifyItemInserted(taskList.size() - 1);
+        });
+
+        // Кнопка чек
+        receiptButton.setOnClickListener(v -> {
+            Intent btIntent = new Intent(this, ControlActivity.class);
+            btIntent.putParcelableArrayListExtra("taskList", taskList);
+
+            startActivity(btIntent);
         });
 
         // Кнопка назад

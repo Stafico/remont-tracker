@@ -18,14 +18,22 @@
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/tasksRecyclerView"
         android:layout_width="match_parent"
-        android:layout_height="0dp"
-        android:layout_weight="1"/>
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
 
     <Button
         android:id="@+id/button_add_task"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Додати завдання"
         android:backgroundTint="#4CAF50"
-        android:textColor="@android:color/white"/>
+        android:text="Додати завдання"
+        android:textColor="@android:color/white" />
+
+    <Button
+        android:id="@+id/button_receipt"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:backgroundTint="#4CAF50"
+        android:text="Роздрукувати чек"
+        android:textColor="@android:color/white" />
 </LinearLayout>
