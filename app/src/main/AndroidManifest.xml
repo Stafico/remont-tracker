@@ -12,8 +12,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.RemontTracker"
         tools:targetApi="31">
+        <activity
+            android:name=".ExpensesActivity"
+            android:exported="false" />
         <activity android:name=".FullScreenPhotoActivity" />
-
         <activity android:name=".TasksDetailsActivity" />
         <activity
             android:name=".TasksActivity"

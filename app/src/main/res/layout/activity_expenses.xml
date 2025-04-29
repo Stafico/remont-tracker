@@ -1,0 +1,71 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:padding="16dp">
+
+    <!--  Назад -->
+    <Button
+        android:id="@+id/button_back"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Назад"
+        android:backgroundTint="#FF5722"
+        android:textColor="@android:color/white" />
+
+    <!--  Таблиця з матеріалами -->
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/materialsRecyclerView"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:layout_marginTop="12dp" />
+
+    <!--  Додати матеріал -->
+    <Button
+        android:id="@+id/button_add_material"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Додати матеріал"
+        android:backgroundTint="#4CAF50"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="12dp" />
+
+    <!--  Коментар / опис -->
+    <EditText
+        android:id="@+id/expenses_comment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Коментар або опис витрат"
+        android:inputType="textMultiLine"
+        android:minLines="3"
+        android:gravity="top|start"
+        android:layout_marginTop="8dp"
+        android:background="@android:drawable/edit_text" />
+
+    <!-- Зберегти коментар -->
+    <Button
+        android:id="@+id/save_button"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Зберегти"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#4CAF50"
+        android:textColor="@android:color/white" />
+
+
+
+    <!--  Друк -->
+    <Button
+        android:id="@+id/button_print"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="Друк"
+        android:backgroundTint="#FF9800"
+        android:textColor="@android:color/white"
+        android:layout_marginTop="8dp" />
+
+</LinearLayout>

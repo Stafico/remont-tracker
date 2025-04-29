@@ -25,30 +25,15 @@ public class second extends AppCompatActivity {
     private static final String PREFS_NAME = "projects_prefs";
     private static final String KEY_PROJECTS = "saved_projects";
 
-    private int projectCount = 0;
+    //private int projectCount = 0;
     private final ArrayList<ProjectFragment> projectFragments = new ArrayList<>();
     private final ArrayList<ProjectModel> savedModels = new ArrayList<>();
 
     private LinearLayout projectButtonContainer;
     private SharedPreferences prefs;
-    private Gson gson = new Gson();
+    private final Gson gson = new Gson();
 
-    private String generateNextButtonLabel() {
-        int index = 1;
-        while (true) {
-            String proposed = "Проєкт " + index;
-            boolean exists = false;
-            for (int i = 0; i < projectButtonContainer.getChildCount(); i++) {
-                Button btn = (Button) projectButtonContainer.getChildAt(i);
-                if (btn.getText().toString().equals(proposed)) {
-                    exists = true;
-                    break;
-                }
-            }
-            if (!exists) return proposed;
-            index++;
-        }
-    }
+
 
 
     @Override
@@ -72,15 +57,12 @@ public class second extends AppCompatActivity {
 
         // Створити новий проєкт
         createBtn.setOnClickListener(v -> {
-            projectCount++;
+
+
             String buttonTitle = generateNextButtonLabel();
-
-// 🧪 Тимчасово — заглушки для вводу користувачем
-            String projectTitle = "Проєкт " + projectCount;
-            String projectDescription = "Опис для '" + projectTitle + "'";
-
-// передаємо: (назва кнопки, справжня назва, опис)
-            addProject(buttonTitle, projectTitle, projectDescription);
+            String projectTitle = "Назва проєкту";
+            String projectDescription = "Опис проєкту";
+            addProject(buttonTitle, projectTitle, projectDescription, true);
             saveProjects();
 
         });
@@ -91,7 +73,7 @@ public class second extends AppCompatActivity {
                 projectFragments.remove(projectFragments.size() - 1);
                 savedModels.remove(savedModels.size() - 1);
                 projectButtonContainer.removeViewAt(projectButtonContainer.getChildCount() - 1);
-                projectCount--;
+                //projectCount--;
 
                 if (!projectFragments.isEmpty()) {
                     loadFragment(projectFragments.get(projectFragments.size() - 1));
@@ -114,6 +96,24 @@ public class second extends AppCompatActivity {
         });
     }
 
+    // Генерація наступної унікальної назви кнопки
+    private String generateNextButtonLabel() {
+        int index = 1;
+        while (true) {
+            String proposed = "Проєкт " + index;
+            boolean exists = false;
+            for (int i = 0; i < projectButtonContainer.getChildCount(); i++) {
+                Button btn = (Button) projectButtonContainer.getChildAt(i);
+                if (btn.getText().toString().equals(proposed)) {
+                    exists = true;
+                    break;
+                }
+            }
+            if (!exists) return proposed;
+            index++;
+        }
+    }
+
     //  Завантаження проєктів з SharedPreferences
     private void loadSavedProjects() {
         String json = prefs.getString(KEY_PROJECTS, null);
@@ -124,10 +124,10 @@ public class second extends AppCompatActivity {
             for (int i = 0; i < restored.size(); i++) {
                 ProjectModel model = restored.get(i);
                 String buttonName = "Проєкт " + (i + 1);
-                addProject(buttonName, model.getTitle(), model.getDescription());
+                addProject(buttonName, model.getTitle(), model.getDescription(), false);
             }
 
-
+            savedModels.clear();
             savedModels.addAll(restored);
 
         }
@@ -140,16 +140,21 @@ public class second extends AppCompatActivity {
     }
 
     //  Створення фрагменту + кнопки
-    private void addProject(String buttonName, String title, String desc) {
-        String projectTitle = "Назва проєкту " + projectCount;
-        String projectDescription = "Опис для '" + projectTitle + "'";
+    private void addProject(String buttonName, String title, String desc, boolean saveModel) {
 
-        ProjectFragment fragment = ProjectFragment.newInstance(projectTitle, projectDescription);
+
+        ProjectFragment fragment = ProjectFragment.newInstance(title, desc);
         projectFragments.add(fragment);
-        savedModels.add(new ProjectModel(projectTitle, projectDescription));
+
+        if (saveModel) {
+            savedModels.add(new ProjectModel(title, desc)); //  Додаємо тільки коли треба
+        }
+
+
+
 
         Button button = new Button(this);
-        button.setText(title);
+        button.setText(buttonName);
         button.setTextColor(Color.WHITE);
         button.setBackgroundTintList(ColorStateList.valueOf(Color.parseColor("#FF5722")));
         button.setTextSize(16);
@@ -168,6 +173,7 @@ public class second extends AppCompatActivity {
         projectButtonContainer.addView(button);
         loadFragment(fragment);
     }
+
 
     // 🔁 Завантаження фрагмента у вміст
     private void loadFragment(ProjectFragment fragment) {

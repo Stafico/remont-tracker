@@ -52,6 +52,13 @@ public class ProjectFragment extends Fragment {
             startActivity(intent);
         });
 
+        Button materialsButton = view.findViewById(R.id.button5);
+        materialsButton.setOnClickListener(v -> {
+            Intent intent = new Intent(getContext(), ExpensesActivity.class);
+            startActivity(intent);
+        });
+
+
         TextView titleView = view.findViewById(R.id.projectTitle);
         TextView descView = view.findViewById(R.id.projectDescription);
 
