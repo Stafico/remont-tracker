@@ -1,4 +1,4 @@
-package com.stafico.remonttracker;
+package com.stafico.remonttracker.presentation;
 
 import android.os.Bundle;
 import android.widget.Button;
@@ -8,6 +8,9 @@ import android.widget.Toast;
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.stafico.remonttracker.domain.model.MaterialModel;
+import com.stafico.remonttracker.R;
 
 import java.util.ArrayList;
 

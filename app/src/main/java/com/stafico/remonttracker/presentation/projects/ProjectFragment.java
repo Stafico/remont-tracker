@@ -11,6 +11,7 @@ import android.widget.TextView;
 import androidx.fragment.app.Fragment;
 
 import com.stafico.remonttracker.R;
+import com.stafico.remonttracker.presentation.ExpensesActivity;
 
 public class ProjectFragment extends Fragment {
 

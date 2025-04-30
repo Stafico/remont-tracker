@@ -1,4 +1,4 @@
-package com.stafico.remonttracker;
+package com.stafico.remonttracker.presentation;
 
 import android.text.Editable;
 import android.text.TextWatcher;
@@ -9,6 +9,9 @@ import android.widget.EditText;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.RecyclerView;
+
+import com.stafico.remonttracker.domain.model.MaterialModel;
+import com.stafico.remonttracker.R;
 
 import java.util.List;
 
