@@ -53,17 +53,43 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="@+id/guideline2" />
 
-    <Button
-        android:id="@+id/button2"
+    <LinearLayout
+        android:id="@+id/authButtons"
         android:layout_width="303dp"
         android:layout_height="67dp"
+        android:orientation="horizontal"
         android:layout_marginTop="42dp"
-        android:backgroundTint="#FF5722"
-        android:text="@string/button_signIn"
-        android:textSize="20sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.504"
+        android:gravity="center"
+        app:layout_constraintTop_toBottomOf="@+id/Move"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/Move" />
+        app:layout_constraintEnd_toEndOf="parent">
+
+        <!-- Кнопка Увійти -->
+        <Button
+            android:id="@+id/button_login"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="Увійти"
+            android:backgroundTint="#FAA716"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+
+        <Space
+            android:layout_width="12dp"
+            android:layout_height="match_parent" />
+
+        <!-- Кнопка Зареєструватися -->
+        <Button
+            android:id="@+id/button_register"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="Зареєструватися"
+            android:backgroundTint="#FF5722"
+            android:textColor="@android:color/white"
+            android:textSize="18sp" />
+    </LinearLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

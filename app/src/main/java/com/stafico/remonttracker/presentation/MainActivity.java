@@ -5,6 +5,7 @@ import android.content.Intent;
 import android.content.SharedPreferences;
 import android.os.Bundle;
 import android.view.View;
+import android.widget.Button;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +28,18 @@ public class MainActivity extends AppCompatActivity {
         SharedPreferences prefs = getSharedPreferences("projects_prefs", MODE_PRIVATE);
         prefs.edit().clear().apply(); // Очистити проєкти при запуску додатку
         // ----------------------------------------------------------------------------------
+
+        Button loginBtn = findViewById(R.id.button_login);
+        loginBtn.setOnClickListener(v -> {
+            startActivity(new Intent(this, LoginActivity.class));
+        });
+
+        Button registerBtn = findViewById(R.id.button_register);
+        registerBtn.setOnClickListener(v -> {
+            Intent intent = new Intent(this, RegisterActivity.class);
+            startActivity(intent);
+        });
+
 
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
             Insets systemBars = insets.getInsets(WindowInsetsCompat.Type.systemBars());
