@@ -7,15 +7,18 @@ import androidx.annotation.NonNull;
 
 public class TaskModel implements Parcelable {
     private final String title;
+    private final double price; // Додано поле
     private boolean isDone;
 
-    public TaskModel(String title, boolean isDone) {
+    public TaskModel(String title, double price, boolean isDone) {
         this.title = title;
+        this.price = price;
         this.isDone = isDone;
     }
 
     protected TaskModel(Parcel in) {
         title = in.readString();
+        price = in.readDouble(); // читаємо price
         isDone = in.readByte() != 0;
     }
 
@@ -35,6 +38,10 @@ public class TaskModel implements Parcelable {
         return title;
     }
 
+    public double getPrice() { // геттер
+        return price;
+    }
+
     public boolean isDone() {
         return isDone;
     }
@@ -51,6 +58,7 @@ public class TaskModel implements Parcelable {
     @Override
     public void writeToParcel(@NonNull Parcel parcel, int flags) {
         parcel.writeString(title);
-        parcel.writeByte((byte) (isDone ? 1 : 0)); // boolean сохраняется как byte
+        parcel.writeDouble(price); // записуємо price
+        parcel.writeByte((byte) (isDone ? 1 : 0));
     }
 }

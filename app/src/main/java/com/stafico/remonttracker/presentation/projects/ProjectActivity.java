@@ -55,7 +55,7 @@ public class ProjectActivity extends AppCompatActivity {
         // Кнопка додати
         addTaskButton.setOnClickListener(v -> {
             int number = taskList.size() + 1;
-            taskList.add(new TaskModel("TASK " + number, false));
+            taskList.add(new TaskModel("TASK " + number, 0.0, false));
             taskAdapter.notifyItemInserted(taskList.size() - 1);
         });
 
