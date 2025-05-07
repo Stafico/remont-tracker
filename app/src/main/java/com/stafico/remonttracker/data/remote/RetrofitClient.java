@@ -1,5 +1,7 @@
 package com.stafico.remonttracker.data.remote;
 
+import com.stafico.remonttracker.bluetooth.RcAdapter;
+
 import retrofit2.Retrofit;
 import retrofit2.converter.gson.GsonConverterFactory;
 
@@ -16,5 +18,9 @@ public class RetrofitClient {
                     .build();
         }
         return retrofit.create(ApiService.class);
+    }
+
+    public static Retrofit getRetrofitInstance() {
+        return retrofit;
     }
 }

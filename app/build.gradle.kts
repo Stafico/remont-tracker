@@ -53,6 +53,10 @@ dependencies {
     implementation(libs.ui.graphics)
     implementation(libs.ui.tooling.preview)
     implementation(libs.material3)
+    
+    implementation(libs.retrofit)
+    implementation(libs.retrofit2.converter.gson)
+
 
     testImplementation(libs.junit)
     androidTestImplementation(libs.ext.junit)
